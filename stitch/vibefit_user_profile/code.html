@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VibeFit User Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec13ec",
+                        "primary-light": "#fce7fc",
+                        "background-light": "#f8f6f8",
+                        "background-dark": "#221022",
+                        "card-light": "#ffffff",
+                        "card-dark": "#2d1b2d",
+                        "text-main": "#181118",
+                        "text-sub": "#896189",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "2xl": "2.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "soft": "0 4px 20px -2px rgba(236, 19, 236, 0.05)",
+                        "card": "0 2px 12px -2px rgba(0, 0, 0, 0.05)"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for cleaner look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white min-h-screen flex flex-col antialiased selection:bg-primary selection:text-white">
+<!-- Top Action Bar -->
+<div class="flex items-center justify-between p-6 pb-2">
+<h2 class="text-xl font-bold tracking-tight">Profile</h2>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-card-dark shadow-card text-text-main dark:text-white hover:bg-primary-light dark:hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+</button>
+</div>
+<!-- Profile Section -->
+<div class="px-6 pt-4 pb-8 flex flex-col items-center">
+<!-- Avatar Container -->
+<div class="relative group cursor-pointer">
+<div class="w-32 h-32 rounded-full p-1 bg-gradient-to-tr from-primary to-purple-400">
+<div class="w-full h-full rounded-full border-4 border-white dark:border-background-dark overflow-hidden bg-gray-200">
+<img alt="Stylish young woman portrait" class="w-full h-full object-cover" data-alt="Stylish young woman portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpKEmBI-3Gum4BOPbZIjmRKhepzYXSVRQCVcp8wcyn-9BbYK3yjlLtDafza4L0vbs9_XvwNbkN1jqgz92OgAOVUTlgPnJ7drToWJu-yZtWRxaxiMjFCy5cIAqpjiousF9bWHWLkOGE3weiFj6uusGaC3amBxuP2AUZ61eYoRh5FJJJyCXPGgNdB72uP-fNghqG6dxdhAWOvwsFUoDFiZ7oacqinBntdot6-6KUU0TS9ij6UqYdu7ipYyYVBzgf6uRmAXESheWXAQ"/>
+</div>
+</div>
+<!-- Fashion Level Badge -->
+<div class="absolute -bottom-2 -right-2 bg-white dark:bg-card-dark py-1 px-3 rounded-full shadow-soft border border-primary-light flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[16px] fill-1">diamond</span>
+<span class="text-xs font-bold text-primary uppercase tracking-wider">Trendsetter</span>
+</div>
+</div>
+<!-- User Info -->
+<div class="mt-6 text-center space-y-1">
+<h1 class="text-2xl font-bold text-text-main dark:text-white">Alex Rivera</h1>
+<p class="text-text-sub text-sm font-medium">@alex.vibe • San Francisco</p>
+</div>
+<!-- Action Button -->
+<button class="mt-6 w-full max-w-[200px] bg-text-main dark:bg-white text-white dark:text-text-main py-3 px-6 rounded-full font-semibold text-sm shadow-lg hover:shadow-xl transition-all transform active:scale-95 flex items-center justify-center gap-2">
+<span>Edit Profile</span>
+<span class="material-symbols-outlined text-[18px]">edit_square</span>
+</button>
+</div>
+<!-- Stats Cards -->
+<div class="px-6 pb-8">
+<div class="flex gap-4 justify-between bg-white dark:bg-card-dark p-2 rounded-2xl shadow-card">
+<div class="flex-1 flex flex-col items-center justify-center py-4 rounded-xl hover:bg-background-light dark:hover:bg-white/5 transition-colors cursor-pointer">
+<span class="text-2xl font-bold text-text-main dark:text-white">42</span>
+<span class="text-xs text-text-sub font-medium mt-1">Outfits</span>
+</div>
+<div class="w-px bg-gray-100 dark:bg-white/10 my-4"></div>
+<div class="flex-1 flex flex-col items-center justify-center py-4 rounded-xl hover:bg-background-light dark:hover:bg-white/5 transition-colors cursor-pointer">
+<span class="text-2xl font-bold text-text-main dark:text-white">1.2k</span>
+<span class="text-xs text-text-sub font-medium mt-1">Followers</span>
+</div>
+<div class="w-px bg-gray-100 dark:bg-white/10 my-4"></div>
+<div class="flex-1 flex flex-col items-center justify-center py-4 rounded-xl hover:bg-background-light dark:hover:bg-white/5 transition-colors cursor-pointer">
+<span class="text-2xl font-bold text-text-main dark:text-white">85</span>
+<span class="text-xs text-text-sub font-medium mt-1">Saved</span>
+</div>
+</div>
+</div>
+<!-- Digital Closet Section -->
+<div class="flex-1 bg-white dark:bg-card-dark rounded-t-[2.5rem] shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.05)] px-6 pt-8 pb-24">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-lg font-bold text-text-main dark:text-white">My Digital Closet</h3>
+<button class="text-primary text-sm font-semibold hover:opacity-80">See All</button>
+</div>
+<!-- Filter Tags -->
+<div class="flex gap-3 overflow-x-auto no-scrollbar mb-6 pb-2">
+<button class="whitespace-nowrap px-5 py-2 rounded-full bg-text-main text-white text-sm font-medium">All Items</button>
+<button class="whitespace-nowrap px-5 py-2 rounded-full bg-background-light dark:bg-white/5 text-text-sub hover:bg-primary-light hover:text-primary transition-colors text-sm font-medium">Tops</button>
+<button class="whitespace-nowrap px-5 py-2 rounded-full bg-background-light dark:bg-white/5 text-text-sub hover:bg-primary-light hover:text-primary transition-colors text-sm font-medium">Bottoms</button>
+<button class="whitespace-nowrap px-5 py-2 rounded-full bg-background-light dark:bg-white/5 text-text-sub hover:bg-primary-light hover:text-primary transition-colors text-sm font-medium">Shoes</button>
+</div>
+<!-- Closet Grid -->
+<div class="grid grid-cols-2 gap-4">
+<!-- Item 1 -->
+<div class="group relative aspect-[3/4] bg-background-light dark:bg-background-dark rounded-2xl overflow-hidden cursor-pointer">
+<img alt="Denim jacket on hanger" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Denim jacket on hanger" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEHzMWczJTxyNDHu6rVkO3VG5i6khqDlDHkNuBoBx9EE-WCCgcCIBSgVVp7TbGLF-4r_8GkFpPHXEStDx56tQdT8ZJprFIFfbi1VgzTssX7VqxagZ3xdDyEH5IblwwLXHtjQYkUg7ISxtKr1WFSmAwBN21x5EWBYngSp4kAwzZ-x8GNijMytlhVc4EcqnlgdZAZjipoD7sTveR2b4WnqIXN8puWovkFbyDptIgLsayYy_QlOkfVq3TvXhGWOl5v2o9kcrUBhsCAA"/>
+<div class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm dark:bg-black/60 p-2 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-text-main dark:text-white block">checkroom</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group relative aspect-[3/4] bg-background-light dark:bg-background-dark rounded-2xl overflow-hidden cursor-pointer">
+<img alt="White linen summer shirt" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="White linen summer shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB05jk9_QsofbLhfa5ja_Al2mEPXKq-pc-BjgpCbUp93h_QWwzegohGYX5fz8Lv24FVge-Tu4iFlh-Q26nFKsKMSjvj9-dCmvO5cJQ2nh5bfHihmO_yDx5agFW0KIllgdK7NrJ6p_0_Z6YKhLsf3t3f8AdHzR0DclH8voxKmDKetEpUEF_L1Q1v2YnECaGit1NNdIhjs_NZaMMYykdY3_2AS58qhYB77SBITJnccrIeGlrKqccqjZWRyaUc1NUxBxo6hhqvN_UNqg"/>
+<div class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm dark:bg-black/60 p-2 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-text-main dark:text-white block">checkroom</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group relative aspect-[3/4] bg-background-light dark:bg-background-dark rounded-2xl overflow-hidden cursor-pointer">
+<img alt="Blue high heel shoes" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Blue high heel shoes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkEVDUognEDyCDNbhZRqB3z9TJyYCKZo0aq879DuCpXY8c5-NG2LG_UNUIX0UlVmkjIHjt6OsLNOAbJlQ4KBGX97Cm-xANWdNfHdqoqLodLzmyHyeDPK_evwsdMtWYfyKcdgoo0xcglNffASKVuJTVYmfJCCQxp9vEG8gTbxvmNpTOzXmKik208xinItokAuT_k3coYoBv1vyiPgCNC2Xmi-daEEx6GoJjN2BeTyclbZUmpcwg2nYG7T-4vIQ9HsOmzksUQYmDAg"/>
+<div class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm dark:bg-black/60 p-2 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-text-main dark:text-white block">checkroom</span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="group relative aspect-[3/4] bg-background-light dark:bg-background-dark rounded-2xl overflow-hidden cursor-pointer">
+<img alt="Orange sweater flat lay" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Orange sweater flat lay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnyKcSmW6KN-uNkHBHinYDI9oBKoCNWw5uHrHBXQvGg--mjb5g485_gbgLWJqw27KBl7qTsIOQxllLI3rIwPDINArmUFgv6sjgRUPxmftMJNo0q2SFblh0oPQFrWKrZE-Wu-OcLQkFMMabaLNX7iaFXNw2CLyetfVt-zUVoQOga2RV0oSCtbLDJsUnt_kARopNanMU6OFo2cBo2YLYDE1bTrx7JApjshsGaOZ1Q2wc3waz7nsNmqys0FHdvBsWH8CZZoVkmscP2A"/>
+<div class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm dark:bg-black/60 p-2 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-text-main dark:text-white block">checkroom</span>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="group relative aspect-[3/4] bg-background-light dark:bg-background-dark rounded-2xl overflow-hidden cursor-pointer">
+<img alt="Patterned silk scarf" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Patterned silk scarf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkqYRNUdN4QOsCkM9mFXE5r2A2zAswh3Hvi-fBzLAZ6FItztltZKNJJS_3VsM3doRrvfed4Ph3pnJso5I_vfu7tB22iRzxGdXzMP804JYlJhmHkVWp-3Zu30o6SPLqbu13v63zIb9oOeFiHo0-hL1PFXePyNjDGrwt7S2EU1UMo5Gtg91kBKXP1yvpoYfjFOJYKuqkC8IKGhlsD-dHeVenNqItB4DrW_JnMrEl3q8Od4LBd9iGvc9xZmrDZsQIa4H_fcf8ulIOyg"/>
+<div class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm dark:bg-black/60 p-2 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-text-main dark:text-white block">checkroom</span>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="group relative aspect-[3/4] bg-background-light dark:bg-background-dark rounded-2xl overflow-hidden cursor-pointer border-2 border-dashed border-gray-300 dark:border-white/20 flex flex-col items-center justify-center hover:bg-gray-50 dark:hover:bg-white/5 transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary text-[24px]">add</span>
+</div>
+<span class="text-sm font-semibold text-text-sub">Add Item</span>
+</div>
+</div>
+</div>
+<!-- Bottom Nav -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-card-dark/90 backdrop-blur-lg border-t border-gray-100 dark:border-white/5 px-6 pb-6 pt-3 z-50">
+<div class="flex justify-between items-center max-w-lg mx-auto">
+<a class="flex flex-col items-center gap-1 text-text-sub hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-text-sub hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">search</span>
+<span class="text-[10px] font-medium">Discover</span>
+</a>
+<a class="flex flex-col items-center gap-1 relative -top-5" href="#">
+<div class="w-14 h-14 bg-primary rounded-full shadow-lg shadow-primary/30 flex items-center justify-center text-white transform hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[28px]">stylus_note</span>
+</div>
+</a>
+<a class="flex flex-col items-center gap-1 text-text-sub hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">checkroom</span>
+<span class="text-[10px] font-medium">Closet</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[24px] fill-1">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</div>
+</div>
+</body></html>

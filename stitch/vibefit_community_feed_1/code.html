@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VibeFit Community Feed</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec13ec",
+                        "primary-light": "#fad2fa",
+                        "background-light": "#f8f6f8",
+                        "background-dark": "#221022",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1a2d",
+                        "text-main": "#181118",
+                        "text-sub": "#896189",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem", 
+                        "2xl": "2.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(236, 19, 236, 0.05), 0 0 10px -2px rgba(0, 0, 0, 0.02)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding for horizontal scroll */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main antialiased selection:bg-primary selection:text-white">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto bg-surface-light shadow-2xl">
+<!-- Header Section -->
+<header class="sticky top-0 z-50 bg-surface-light/95 backdrop-blur-md px-6 pt-12 pb-4">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h1 class="text-2xl font-bold tracking-tight text-text-main">VibeFit Community</h1>
+<p class="text-sm text-text-sub font-medium">Discover trending AI looks</p>
+</div>
+<button class="relative flex h-10 w-10 items-center justify-center rounded-full bg-background-light hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-text-main">notifications</span>
+<span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-primary ring-2 ring-white"></span>
+</button>
+</div>
+<!-- Search Bar -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+<span class="material-symbols-outlined text-text-sub group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full h-12 rounded-xl bg-background-light border-transparent pl-12 pr-4 text-base text-text-main placeholder-text-sub focus:border-primary focus:bg-white focus:ring-0 transition-all shadow-sm" placeholder="Search styles, vibes, or creators..." type="text"/>
+</div>
+</header>
+<!-- Tags Scroll -->
+<div class="w-full overflow-x-auto no-scrollbar px-6 pb-6">
+<div class="flex gap-3">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary px-5 shadow-lg shadow-primary/20">
+<span class="text-white text-sm font-semibold">All</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-gray-100 hover:border-primary/30 hover:bg-primary/5 px-5 transition-all shadow-sm">
+<span class="text-text-main text-sm font-medium">#SummerVibe</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-gray-100 hover:border-primary/30 hover:bg-primary/5 px-5 transition-all shadow-sm">
+<span class="text-text-main text-sm font-medium">#OfficeStyle</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-gray-100 hover:border-primary/30 hover:bg-primary/5 px-5 transition-all shadow-sm">
+<span class="text-text-main text-sm font-medium">#Streetwear</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white border border-gray-100 hover:border-primary/30 hover:bg-primary/5 px-5 transition-all shadow-sm">
+<span class="text-text-main text-sm font-medium">#DateNight</span>
+</button>
+</div>
+</div>
+<!-- Masonry Grid Content -->
+<main class="flex-1 px-4 pb-24">
+<div class="columns-2 gap-4 space-y-4">
+<!-- Card 1 -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-xl bg-white shadow-soft">
+<div class="relative aspect-[3/4] w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Woman in yellow summer dress posing outdoors" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1gSd4wgolBndg5xpmh_GOuOojqq6tzhgHdSk1unqg1AzssnY_phHr7_rCQS-1oJTK-wB3d2X-VR_QsnRrOS5WQ8iH62dGpwj-Nw1hVvM1GEt5DI9qns0qibEp77WpUa9DMCVqLgudyqw-lXOdiO1gDWvHtiefjKXXwqBndZXcGP3Fy6uDNqUZQ76LocHh9a0ZFkH-RaKm_J7ZSjeP73RfB4Bkv7l0nYviEqWesyhFQxc91mogvHl8ELIjQ65fzbBHY32rC_N5vQ');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-3 left-3 right-3">
+<div class="flex items-center gap-2 mb-2">
+<img alt="User Avatar" class="h-6 w-6 rounded-full border border-white/50" data-alt="User avatar small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_nQQbGkm0WSWn9EI4uR-QSc5t8BKwRKzwXc5ERaJitY1hokSI2G1qX70GBlXEc8cq4Mt-b_RQ3I8UaoGUGv18j3ohm5mVDRVW1LFjXtOmt0LfcgP5kVzc4TvYvN-8JHnI80XsbqBgNLp9Ivy_od43YWIItynGDyVlh-81i7yPjxRVVAlLHCiePdYo6WS5m0uDvCoE7NajfNC0FwcB6ufKnL5pHqsBFKe6JCrqQNlttlfbWwC3ZztkbnE5RCwXqV_mTkPup2Wxqw"/>
+<span class="text-xs font-medium text-white/90">Anna K.</span>
+</div>
+<p class="text-white text-sm font-bold leading-tight mb-2">Summer Breeze Collection</p>
+</div>
+<button class="absolute top-3 right-3 h-8 w-8 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-white hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-3">
+<button class="w-full flex items-center justify-center gap-2 bg-primary/10 hover:bg-primary hover:text-white text-primary rounded-lg py-2 transition-colors group/btn">
+<span class="material-symbols-outlined text-[18px]">checkroom</span>
+<span class="text-xs font-bold">Try this Look</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-xl bg-white shadow-soft">
+<div class="relative aspect-[3/5] w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Fashion model walking in stylish coat" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCOWWt8f9WGRqYy45iJ2yfCW2L5PnFsgpTea9XD6VBOEmj3CUdESPXZ7mT0KRDzj9GpJErF3jKO3Rkw9tecoKRtyHG8FMn1o8WTe0PSOtoXK9uVRri_GavZlUoNI3yWkdAbcNmglzKw411niQsZaLOswWiW8Ts38WuBExuRSMbrX3UayjGRzyeQbDM16rRtQlwnqRUsK9uYyjvshUmRSWpSmp36rk7fWHFo0efzZEEVCwDjUPBdQMWklm3ZdG70IipBJ2u3rN9aYw');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-3 left-3 right-3">
+<div class="flex items-center gap-2 mb-2">
+<img alt="User Avatar" class="h-6 w-6 rounded-full border border-white/50" data-alt="User avatar small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeULeleUJy2BJGkCcZYAZf5iGy4Y5bohKrY3qo5wiByEaSUIA7hVfTbvL3cLv064_ub4SGnzb5X17fL-XZT4BDW4w23mNMsu5PZxOl2gueTQ-1rE3MC2eSI58CE6yF8qoKenufCnkjl4doIiBM7nFO1QPwN_uFPmJxW6SMedcym7sdUKBUu1XyTMi7Snpt-lrcciHONRiDVbM5a5fOkop4VDEwXtLQwPcP-AyL4DO7TxRZ0Nte9d2yBURxh-H5BBB54Gd90gZ97A"/>
+<span class="text-xs font-medium text-white/90">Mike Ross</span>
+</div>
+<p class="text-white text-sm font-bold leading-tight mb-2">Urban Office Chic</p>
+</div>
+<button class="absolute top-3 right-3 h-8 w-8 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-white hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-3">
+<button class="w-full flex items-center justify-center gap-2 bg-primary/10 hover:bg-primary hover:text-white text-primary rounded-lg py-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">checkroom</span>
+<span class="text-xs font-bold">Try this Look</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-xl bg-white shadow-soft">
+<div class="relative aspect-square w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Man in casual trendy streetwear outfit" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCmR4-w5QtNnJztr3XnvBCB_Qw7O0Bl6ONf5PgvQwwvvy8BYJ39XdNp2sxaR1RPdvmhS8ZEWObHDdWvphXNdWNOGgAme-WDvXrl12zB0jEfmtLL_QDRsodBf4r92GVuy19MTKqa6OCkxHn-if2RB1aJ_-LHSp-iWqAB5DT1pYLoscWScPykKPNupxm3O_GwXvGKiueatKwyaGUwj0I0ij0l8y2MydtQLplB0kT--D9ucgMWNj09RHHsLVg2s9szdgIPOKrv3OJyZw');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-3 left-3 right-3">
+<div class="flex items-center gap-2 mb-2">
+<img alt="User Avatar" class="h-6 w-6 rounded-full border border-white/50" data-alt="User avatar small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_46s1wQLB96KIppgRAx6xlkdXkO0o5kspiDV4CtuCq9KN8GWQVGbUVxqOBXk9jOmjEwZHy50Q5QhlLcRXpbwPs0-fNYzoQJgMtlQ9DopyIY_G9xIZ-iRotpjkX2rg57tFBSVfFmuloW3VzDQA-dyCBzWreeaFnZZIXMO1qZkmSTPjrDw9woRXwD3xgFVlo7xE081g1rPBxouYBiSSqhP2wWkUJgfgT5OvgBJvuAEkyxoOeD7qe1Xehj7v4DMghR5r5mymcexjXA"/>
+<span class="text-xs font-medium text-white/90">Leo D.</span>
+</div>
+<p class="text-white text-sm font-bold leading-tight mb-2">Weekend Vibes</p>
+</div>
+<button class="absolute top-3 right-3 h-8 w-8 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-white hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-3">
+<button class="w-full flex items-center justify-center gap-2 bg-primary/10 hover:bg-primary hover:text-white text-primary rounded-lg py-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">checkroom</span>
+<span class="text-xs font-bold">Try this Look</span>
+</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-xl bg-white shadow-soft">
+<div class="relative aspect-[3/4] w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Portrait of woman with fashionable hat" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCWQGYRKDdp2K2c-8o3a9iLa_Q67hPjtkgirf6_xPmBRVPqRfrkxsY8-2B24RaRpw_yXpJgWIjyS4PpZRd6tDx25JYd-EpF3Ojj7mmaw-zL7VV727O_4e9kPxcTq2uEDO1yDnpU0jc7i581ZLV7Ir0KRaTOWQQdJfqC8mZ7Z9xQrmxky5a3iuoxOYSBUpawDQ3qkYY5y73xjrPvAEt9UYHbaNh0HL2ObP1wQGUjN7O5z4DFgOA76rvCiBihfi0wgEQpzpFa1HJXrQ');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-3 left-3 right-3">
+<div class="flex items-center gap-2 mb-2">
+<img alt="User Avatar" class="h-6 w-6 rounded-full border border-white/50" data-alt="User avatar small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5ZumC9VGh-EzS3k0VKF-FeC5I0oWuA4bJaEuXN-V0zLGbAADNjbehN8D61JVgo7bg4euYglad6bqQR59XRlgE1F8TfzaVS2QJh53Zs-yf7PRsK8ck__egwyeoX4pGATPIfIQy632vGKAQ_aquSRKESkiWLgzFArkofGr7qPguf_NKXYzSfCYHdDko7p5JVjvDy9UoZLTGA2vkmgZfL7bMGEPyhMj8G84Nj9OTQ3HtJugrSuYO9SQqEyS41WJXcjaJBqBgMwDzOA"/>
+<span class="text-xs font-medium text-white/90">Sarah J.</span>
+</div>
+<p class="text-white text-sm font-bold leading-tight mb-2">Formal Elegance</p>
+</div>
+<button class="absolute top-3 right-3 h-8 w-8 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-white hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-3">
+<button class="w-full flex items-center justify-center gap-2 bg-primary/10 hover:bg-primary hover:text-white text-primary rounded-lg py-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">checkroom</span>
+<span class="text-xs font-bold">Try this Look</span>
+</button>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-xl bg-white shadow-soft">
+<div class="relative aspect-[4/5] w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Minimalist fashion shot with neutral colors" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-TYWKbRAWpLTHFKmB6s0g3z-RCaX0HelgnZpwUaM5autNOi_sCXd_X2pIq1WFVJfYkCctANAhBxA8tgXDLtP35yfyfaKQixeeRrAGQ1TuuI7m4YdtdCCrAhdxanuWC8idr7Bog07pzzXPZ7KusJN5F4ZnQEI2YxDNKANSVouShRRv3DkPtRYEI0dEU_TeBRX2BK0aIbsfez56-USasj0QHgDprNL2emXa6hDdEH_iU3VNvnh1qtpnyrht-VOqgDYWshi-EFaDbQ');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-3 left-3 right-3">
+<div class="flex items-center gap-2 mb-2">
+<img alt="User Avatar" class="h-6 w-6 rounded-full border border-white/50" data-alt="User avatar small" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHpRdu8A2mFYmd1kzfSBZ5zSCdJ_XFWH-aR_vab5crr5Hq75U4l5upORikhAIiUuyvwsT_kLfnSl1de4bwDjUzxfQDPRgGYSE9pGxYg-KAmZkS1MRPeN1lC5WKqpneebAJ9Y6sISJaolQumS4-K1rVdCGuLnG-CG_sjHnqsGMDEdZ7Q24okZQcOGc9bIcr5pC_pLrReRMDJukKfOqmibYstsjiU7Zkg3vJ-CHO0dLwfl8jefwrdJ8eIV5F0UOVUWaYYDnTZLdIig"/>
+<span class="text-xs font-medium text-white/90">Alex M.</span>
+</div>
+<p class="text-white text-sm font-bold leading-tight mb-2">Simplicity</p>
+</div>
+<button class="absolute top-3 right-3 h-8 w-8 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md text-white hover:bg-white hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="p-3">
+<button class="w-full flex items-center justify-center gap-2 bg-primary/10 hover:bg-primary hover:text-white text-primary rounded-lg py-2 transition-colors">
+<span class="material-symbols-outlined text-[18px]">checkroom</span>
+<span class="text-xs font-bold">Try this Look</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 z-50 w-full max-w-md bg-white border-t border-gray-100 pb-safe pt-2">
+<div class="flex justify-around items-end px-2 pb-4">
+<a class="flex flex-1 flex-col items-center gap-1 group" href="#">
+<div class="relative flex items-center justify-center p-1 rounded-full bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-[26px]" style="font-variation-settings: 'FILL' 1, 'wght' 500;">home</span>
+</div>
+<span class="text-[10px] font-semibold text-primary">Feed</span>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 group" href="#">
+<div class="flex items-center justify-center p-1 rounded-full group-hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined text-text-sub group-hover:text-primary text-[26px]">auto_awesome</span>
+</div>
+<span class="text-[10px] font-medium text-text-sub group-hover:text-primary">Try-On</span>
+</a>
+<div class="relative -top-5">
+<button class="flex h-14 w-14 items-center justify-center rounded-full bg-primary shadow-lg shadow-primary/40 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-white text-[32px]">add</span>
+</button>
+</div>
+<a class="flex flex-1 flex-col items-center gap-1 group" href="#">
+<div class="flex items-center justify-center p-1 rounded-full group-hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined text-text-sub group-hover:text-primary text-[26px]">checkroom</span>
+</div>
+<span class="text-[10px] font-medium text-text-sub group-hover:text-primary">Wardrobe</span>
+</a>
+<a class="flex flex-1 flex-col items-center gap-1 group" href="#">
+<div class="flex items-center justify-center p-1 rounded-full group-hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined text-text-sub group-hover:text-primary text-[26px]">person</span>
+</div>
+<span class="text-[10px] font-medium text-text-sub group-hover:text-primary">Profile</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

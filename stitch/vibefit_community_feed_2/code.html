@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VibeFit Virtual Fitting Room</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec13ec",
+                        "primary-light": "#fad2fa",
+                        "background-light": "#f8f6f8",
+                        "background-dark": "#221022",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d1a2d",
+                        "text-main": "#181118",
+                        "text-sub": "#896189",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem", 
+                        "2xl": "2.5rem",
+                        "3xl": "3rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(236, 19, 236, 0.05), 0 0 10px -2px rgba(0, 0, 0, 0.02)',
+                        'glow': '0 0 20px rgba(236, 19, 236, 0.5)',
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+                    },
+                    backdropBlur: {
+                        'xs': '2px',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            min-height: 100vh;
+            background-color: #f0f0f0; 
+        }@keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+        .hotspot::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: inherit;
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-gray-100 font-display text-text-main antialiased selection:bg-primary selection:text-white">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-md mx-auto bg-surface-light shadow-2xl">
+<header class="absolute top-0 left-0 right-0 z-20 px-6 pt-12 pb-4 flex justify-between items-start">
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/30 backdrop-blur-md hover:bg-white/50 transition-colors">
+<span class="material-symbols-outlined text-white">arrow_back</span>
+</button>
+<div class="flex flex-col items-end gap-3">
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/30 backdrop-blur-md hover:bg-white/50 transition-colors">
+<span class="material-symbols-outlined text-white">more_horiz</span>
+</button>
+<div class="flex flex-col gap-2">
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/30 backdrop-blur-md hover:bg-white/50 transition-colors group relative">
+<span class="material-symbols-outlined text-white">undo</span>
+</button>
+<button class="h-10 w-10 flex items-center justify-center rounded-full bg-white/30 backdrop-blur-md hover:bg-white/50 transition-colors group relative">
+<span class="material-symbols-outlined text-white">ios_share</span>
+</button>
+</div>
+</div>
+</header>
+<main class="relative h-[65%] w-full bg-gray-200">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1gSd4wgolBndg5xpmh_GOuOojqq6tzhgHdSk1unqg1AzssnY_phHr7_rCQS-1oJTK-wB3d2X-VR_QsnRrOS5WQ8iH62dGpwj-Nw1hVvM1GEt5DI9qns0qibEp77WpUa9DMCVqLgudyqw-lXOdiO1gDWvHtiefjKXXwqBndZXcGP3Fy6uDNqUZQ76LocHh9a0ZFkH-RaKm_J7ZSjeP73RfB4Bkv7l0nYviEqWesyhFQxc91mogvHl8ELIjQ65fzbBHY32rC_N5vQ');">
+<div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/10"></div>
+</div>
+<div class="absolute top-[35%] left-[45%] w-4 h-4 bg-white rounded-full hotspot cursor-pointer shadow-lg z-10 flex items-center justify-center">
+<div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+</div>
+<div class="absolute top-[60%] left-[52%] w-4 h-4 bg-white rounded-full hotspot cursor-pointer shadow-lg z-10 flex items-center justify-center">
+<div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+</div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 w-full px-8 flex justify-center">
+<button class="group relative flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full shadow-glow transition-all active:scale-95 w-full max-w-xs">
+<span class="material-symbols-outlined animate-pulse">auto_awesome</span>
+<span class="font-bold text-lg tracking-wide">AI Generate Try-on</span>
+</button>
+</div>
+</main>
+<div class="relative flex-1 bg-white/80 backdrop-blur-xl rounded-t-3xl shadow-glass border-t border-white/50 z-20 -mt-6 flex flex-col overflow-hidden">
+<div class="w-full flex justify-center pt-3 pb-1">
+<div class="w-12 h-1.5 bg-gray-300 rounded-full"></div>
+</div>
+<div class="px-6 pb-2">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-xl font-bold text-text-main">My Digital Wardrobe</h2>
+<button class="flex items-center gap-1 text-primary text-sm font-semibold bg-primary/10 px-3 py-1.5 rounded-full hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[18px]">add_a_photo</span>
+                        Import
+                    </button>
+</div>
+<div class="flex gap-4 overflow-x-auto no-scrollbar pb-2">
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-text-main text-white text-sm font-semibold shadow-md">
+                        Tops
+                    </button>
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-white text-text-sub text-sm font-medium border border-gray-100 shadow-sm">
+                        Bottoms
+                    </button>
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-white text-text-sub text-sm font-medium border border-gray-100 shadow-sm">
+                        Shoes
+                    </button>
+<button class="flex-shrink-0 px-4 py-2 rounded-full bg-white text-text-sub text-sm font-medium border border-gray-100 shadow-sm">
+                        Accessories
+                    </button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-6 pb-6 no-scrollbar">
+<div class="grid grid-cols-3 gap-3">
+<div class="aspect-square rounded-2xl bg-white p-2 border-2 border-primary shadow-sm relative overflow-hidden group cursor-pointer">
+<div class="absolute top-1 right-1 h-2 w-2 rounded-full bg-primary"></div>
+<img alt="Yellow Top" class="w-full h-full object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1gSd4wgolBndg5xpmh_GOuOojqq6tzhgHdSk1unqg1AzssnY_phHr7_rCQS-1oJTK-wB3d2X-VR_QsnRrOS5WQ8iH62dGpwj-Nw1hVvM1GEt5DI9qns0qibEp77WpUa9DMCVqLgudyqw-lXOdiO1gDWvHtiefjKXXwqBndZXcGP3Fy6uDNqUZQ76LocHh9a0ZFkH-RaKm_J7ZSjeP73RfB4Bkv7l0nYviEqWesyhFQxc91mogvHl8ELIjQ65fzbBHY32rC_N5vQ"/>
+</div>
+<div class="aspect-square rounded-2xl bg-white p-2 border border-transparent hover:border-gray-200 shadow-sm relative overflow-hidden group cursor-pointer">
+<img alt="White Blouse" class="w-full h-full object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWQGYRKDdp2K2c-8o3a9iLa_Q67hPjtkgirf6_xPmBRVPqRfrkxsY8-2B24RaRpw_yXpJgWIjyS4PpZRd6tDx25JYd-EpF3Ojj7mmaw-zL7VV727O_4e9kPxcTq2uEDO1yDnpU0jc7i581ZLV7Ir0KRaTOWQQdJfqC8mZ7Z9xQrmxky5a3iuoxOYSBUpawDQ3qkYY5y73xjrPvAEt9UYHbaNh0HL2ObP1wQGUjN7O5z4DFgOA76rvCiBihfi0wgEQpzpFa1HJXrQ"/>
+</div>
+<div class="aspect-square rounded-2xl bg-white p-2 border border-transparent hover:border-gray-200 shadow-sm relative overflow-hidden group cursor-pointer">
+<img alt="Coat" class="w-full h-full object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOWWt8f9WGRqYy45iJ2yfCW2L5PnFsgpTea9XD6VBOEmj3CUdESPXZ7mT0KRDzj9GpJErF3jKO3Rkw9tecoKRtyHG8FMn1o8WTe0PSOtoXK9uVRri_GavZlUoNI3yWkdAbcNmglzKw411niQsZaLOswWiW8Ts38WuBExuRSMbrX3UayjGRzyeQbDM16rRtQlwnqRUsK9uYyjvshUmRSWpSmp36rk7fWHFo0efzZEEVCwDjUPBdQMWklm3ZdG70IipBJ2u3rN9aYw"/>
+</div>
+<div class="aspect-square rounded-2xl bg-white p-2 border border-transparent hover:border-gray-200 shadow-sm relative overflow-hidden group cursor-pointer">
+<img alt="T-shirt" class="w-full h-full object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmR4-w5QtNnJztr3XnvBCB_Qw7O0Bl6ONf5PgvQwwvvy8BYJ39XdNp2sxaR1RPdvmhS8ZEWObHDdWvphXNdWNOGgAme-WDvXrl12zB0jEfmtLL_QDRsodBf4r92GVuy19MTKqa6OCkxHn-if2RB1aJ_-LHSp-iWqAB5DT1pYLoscWScPykKPNupxm3O_GwXvGKiueatKwyaGUwj0I0ij0l8y2MydtQLplB0kT--D9ucgMWNj09RHHsLVg2s9szdgIPOKrv3OJyZw"/>
+</div>
+<div class="aspect-square rounded-2xl bg-white p-2 border border-transparent hover:border-gray-200 shadow-sm relative overflow-hidden group cursor-pointer">
+<img alt="Sweater" class="w-full h-full object-cover rounded-xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-TYWKbRAWpLTHFKmB6s0g3z-RCaX0HelgnZpwUaM5autNOi_sCXd_X2pIq1WFVJfYkCctANAhBxA8tgXDLtP35yfyfaKQixeeRrAGQ1TuuI7m4YdtdCCrAhdxanuWC8idr7Bog07pzzXPZ7KusJN5F4ZnQEI2YxDNKANSVouShRRv3DkPtRYEI0dEU_TeBRX2BK0aIbsfez56-USasj0QHgDprNL2emXa6hDdEH_iU3VNvnh1qtpnyrht-VOqgDYWshi-EFaDbQ"/>
+</div>
+<button class="aspect-square rounded-2xl bg-gray-50 border-2 border-dashed border-gray-200 flex flex-col items-center justify-center gap-1 text-gray-400 hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined">add</span>
+<span class="text-[10px] font-medium">Add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,24 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "模块描述"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "页面描述"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "应用"
+    },
+    {
+      "name": "read_media_reason",
+      "value": "用于从相册读取图片并导入到衣橱"
+    },
+    {
+      "name": "camera_reason",
+      "value": "用于拍照导入新的衣橱单品"
+    }
+  ]
+}
